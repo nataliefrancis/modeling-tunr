@@ -42,8 +42,8 @@ function destroy(req, res) {
     return artist.destroy();
   })
   .then(function(){
-    res.redirect("/artists");
-  });  
+    res.send("artist deleted");
+  }); 
 }
 
 module.exports.index = index;
