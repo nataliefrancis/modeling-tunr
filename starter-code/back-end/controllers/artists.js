@@ -10,7 +10,7 @@ function index(req, res) {
 function show(req, res) {
   Artist.findById(req.params.id)
   .then(function(artist){
-    if(!artist) return error(res, "not found");
+    if(!artist) res.send(res, "not found");
     //Artist.sing();
     //artist.shout();
     res.json(artist);
