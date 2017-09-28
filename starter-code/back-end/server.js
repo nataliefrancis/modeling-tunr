@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require('express');
 var app = express();
 var tunrRouter = require('./config/routes.js');
@@ -16,7 +18,8 @@ app.use(bodyParser.json());
 
 app.use(tunrRouter);
 
+let port = process.env.PORT || 3000;
 
-app.listen(3000, function() {
-	console.log("Listening on localhost:3000");
+app.listen(port, function() {
+	console.log(`Listening on port ${port}`);
 });

@@ -1,5 +1,8 @@
+require('dotenv').config();
+
 var express = require('express');
 var app = express();
+var tunrRouter = require('./config/routes.js');
 
 //CORS setup to allow other ports from this host
 
@@ -10,13 +13,13 @@ app.use(function(req, res, next) {
   next();
 });
 
-var tunrRouter = require('./config/routes.js');
-
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 app.use(tunrRouter);
 
-app.listen(3000, function() {
-	console.log("Listening on localhost:3000");
+let port = process.env.PORT || 3000;
+
+app.listen(port, function() {
+	console.log(`Listening on port ${port}`);
 });

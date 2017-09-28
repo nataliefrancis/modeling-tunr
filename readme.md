@@ -18,7 +18,7 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 
 * Use the code in `starter-code` to get started!
 * Navigate to the `starter-code/back-end` folder and `npm install` and `--save` the following packages
-	* `express` `sequelize` `pg` `pg-hstore` `body-parser`
+	* `express` `sequelize` `pg` `pg-hstore` `body-parser` `dotenv`
 * Look inside `back-end/models/index.js` and create the database at the end of the connect URL (in the `psql` console)
 * Replace the `<username>` field with your local Mac username
 * Look at `back-end/db/dbSetup.js`. Get a basic idea for what it is doing, then run it with `node`.
