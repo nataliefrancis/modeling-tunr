@@ -20,7 +20,7 @@ import { AboutComponent } from './about/about.component';
     AboutComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'cli-universal-demo'}),
+    BrowserModule,
     AppRoutingModule,
     ArtistsRoutingModule,
     ArtistsModule,
