@@ -61,8 +61,6 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 	  - Finish the `Manager` model for your database, inside your `models` folder. Give it the attributes `name`, `email`, `office_number`, and `cell_phone_number`, all of type `String`.
 	  - Test out all your routes to make sure `manager` has the same functionality as `artist`.
 
->**Note:** Once you have finished the steps above, and you try to save a manager to the DB, you will see an error in the terminal saying something like `column "email" of relation "managers" does not exist`. If you see this, you need to recreate your `managers` table, so you should run `db/dbSetup.js` with `node` again.
-
 - Sprint 2: User can CRUD songs
   - Same as above, create `songs` routes and components for the front end.
   - Same as above, create `songs` templates for the front end.  
