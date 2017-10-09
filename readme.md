@@ -22,6 +22,7 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 * Look inside `back-end/models/index.js` and create the database at the end of the connect URL (in the `psql` console)
 * Replace the `<username>` field with your local Mac username
 * Look at `back-end/db/dbSetup.js`. Get a basic idea for what it is doing, then run it with `node`.
+* Navigate back to `back-end` and run `server.js` with `node`.
 * Navigate to `front-end` in terminal and run `npm start` to kick off the app.
 * Open your app in Chrome and check out the functionality for viewing, adding, and updating artists.
 	* Create two artists
