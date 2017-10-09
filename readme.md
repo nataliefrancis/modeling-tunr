@@ -17,7 +17,7 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 ## Starting Off
 
 * Use the code in `starter-code` to get started!
-* Navigate to the `starter-code/back-end` folder and `npm install` and `--save` the following packages
+* Navigate to the `starter-code/back-end` folder and `npm install` the following packages
 	* `express` `sequelize` `pg` `pg-hstore` `body-parser` `dotenv`
 * Look inside `back-end/models/index.js` and create the database at the end of the connect URL (in the `psql` console)
 * Replace the `<username>` field with your local Mac username
@@ -59,11 +59,13 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 	  - Fill out your front-end routes in `front-end/src/app/managers/manager-routing.module.ts`, using the artists routes as a model.
 	  - Test your work so far by opening your browser and going to `/managers/show/1`, `managers/new`, and `managers/edit/1`.
 	  - Use the artists templates and the managers `manager-index.component.html` as models to fill out a `manager-show.component.html`, a `manager-edit.component.html`, and a `manager-new.component.html` template.  Do NOT copy-and-paste, you need to change all the fields in these templates to match your manager attributes, namely `name`, `email`, `office_number`, and `cell_phone_number`.  A good way to do this is to have an artist template on the left side of your screen, and the corresponding manager template on the right side.
-	  - Open your browser again.  Looks like we've got some errors.  Yay!  Work with your partner to clear them all.  Use the working `artists` files for help if you're not sure how to resolve the errors.  Stub out (use `console.log`) for any methods.  Don't do anything with `ArtistsService`/`ManagersService` yet, we will cover that in the next step.
-	  - Once all your errors are gone, check out your `managers/edit/1` and `managers/new` in your browser. Cool, we have forms! Now let's actually put some data in there.
+	  - Open your browser again.  Looks like we've got an error.  Yay!  If you look in Developer Tools, you should see `Can't bind to 'ngModel' since it isn't a known property of 'input'.`  What are we missing?  Use the working `artists.module.ts` file for help if you're not sure how to resolve the error.
+	  - If you see the error `Cannot read property 'name' of undefined` on the `edit` or `new` screen that's because that manager does not exist yet.  Go into your `manager-edit.component.ts` and `manager-new.component.ts` files and fix that.
+	  	- **Big Hint:** where is the missing variable defined in `artist-edit.component.ts` and `artist-new.component.ts`, respectively (you should only need to change one line).
+	  - Once your errors are all gone, check out your `managers/edit/1` and `managers/new` in your browser. Cool, we have forms! Now let's actually put some data in there.
 	  - Fill out your front-end service functions in `app/managers/managers.service.ts`, one at a time, using `app/artists/artists.service.ts` as a model. Follow the same left-side-right-side technique as you did for templates.
-		- Import this service into all your manager Components, and fill out the Component functions you stubbed out a couple steps ago, using the artist Components as a guide.
-	  - Open the browser again.  Clear out any errors you see in the terminal, and then try to create a new manager at `managers/new`.  If you look in the Dev Tools console, you should see your manager.  However, we're getting a 404 for our `http` request.  Makes sense, right?  We haven't built our back end yet.  It's time to go full stack....
+	  - Import this service into all your manager Components, and fill out the Component functions, using the artist Components as a guide.
+	  - Open the browser again, and try to create a new manager at `managers/new`.  If you look in the Dev Tools console, you should see your manager.  However, we're getting a 404 for our `http` request.  Makes sense, right?  We haven't built our back end yet.  It's time to go full stack....
 	  - Create managers back-end routes in your `back-end/config/routes.js` file, following the same format as artists.  
 	  - Give `managers.js` in your back-end `back-end/controllers` folder all the functions you already have in `artists.js`. Now we have everything we need except for data persistence.  Let's put a bow on our managers--*Sequelize style*.
 	  - Finish the `Manager` model for your database, inside your `models` folder. Give it the attributes `name`, `email`, `office_number`, and `cell_phone_number`, all of type `String`.
@@ -75,19 +77,19 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
   - Same as above, create `songs` routes and components for the front end.
   - Same as above, create `songs` templates for the front end.  
   - Same as above, create `songs` service for the front end.  
+  - Make sure `app.module.ts` includes the song Module and Routing Module 
   - Same as above, create `songs` routes for the back end.
   - Same as above, create `songs` controllers for the back end.
   - Same as above, give the `Song` model attributes `title`, `duration`, `date_of_release`, and `album_title`.
 
 - Sprint 3: User can see some data populated in the application
 
-  - Seed your application with some data. 
-  	- Check out the almost-complete Artist creation, and fill in the correct info.
-	- Follow this pattern for Manager and Song creation.
-	- It would be a good idea to chain your `create`s with `.then`s.  
-	- Don't forget to `.exit()` when you're done with your last `create`.
-  
-Put the following into your DB with `db/seed.js`:
+Let's seed our application with some data. 
+
+	- There's something wrong with our requiring of `models`.  Can you see what it is?
+	- Check out the almost-complete Artist creation, and fill in the correct info from below.
+	- Follow this pattern for Manager and Song creation. 
+	- Don't forget to `.exit()` when you're done with your last `create`.  But make sure you don't do it before then!
 
   **Artist**:  
 
