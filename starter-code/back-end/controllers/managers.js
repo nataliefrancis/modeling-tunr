@@ -1,9 +1,10 @@
 var db = require('../models');
-var Manager = db.models.Manager;
+var Manager = db.Manager;
 
 function index(req, res) {
-	Manager.findAll().then(function(managers) {
-		res.json(managers);
+	Manager.find({}, function(err, managers) {
+		if (err) res.send(err);
+		else res.json(managers);
 	});
 }
 

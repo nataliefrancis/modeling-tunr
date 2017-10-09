@@ -1,16 +1,23 @@
-var DB = require("../models").models;
+let db = require('./models');
 
-var artistCreate = function() {
-	return DB.Artist.create({
+let artists_list = [
+	{
     name: 'Not right yet',
     photoUrl: 'www.zombo.com',
     nationality: 'Zombie',
     instrument: 'Brains',
     home_address: 'Atlanta'
-  });
-};
+  }
+];
 
-artistCreate()
-.then(function() {
-	process.exit();
+db.Artist.remove({}, function(err, authors) {
+  console.log('removed all authors');
+  db.Artist.create(artists_list, function(err, artists){
+  	if (err) {
+  	  console.log(err);
+  	  return;
+  	}
+  	console.log("created", artists.length, "artists");
+  	process.exit();
+  });
 });

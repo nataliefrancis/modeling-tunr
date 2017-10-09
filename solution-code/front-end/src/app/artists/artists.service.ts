@@ -16,8 +16,8 @@ export class ArtistsService {
 	}
 
 	deleteArtist(artist) {
-		console.log(artist.id);
-		return this.http.delete(`${this.baseUrl}/api/artists/${artist.id}`);
+		console.log(artist._id);
+		return this.http.delete(`${this.baseUrl}/api/artists/${artist._id}`);
 	}
 
 	saveArtist(newArtist) {
@@ -26,7 +26,7 @@ export class ArtistsService {
 	}
 
 	updateArtist(updatedArtist) {
-		return this.http.put(`${this.baseUrl}/api/artists/${updatedArtist.id}`, updatedArtist);		
+		return this.http.put(`${this.baseUrl}/api/artists/${updatedArtist._id}`, updatedArtist);		
 	}
 
   constructor(private http: Http) { }

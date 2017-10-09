@@ -25,7 +25,7 @@ export class ArtistNewComponent implements OnInit {
   			.subscribe(response => {
 			console.log(response.json());
 			let artist = response.json();
-			window.location.href = "/artists/" + artist.id;
+			window.location.href = "/artists/" + artist._id;
 		})
   }
 

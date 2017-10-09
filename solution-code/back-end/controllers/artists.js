@@ -1,49 +1,43 @@
 var db = require('../models');
-var Artist = db.models.Artist;
+var Artist = db.Artist;
 
 function index(req, res) {
-  Artist.findAll().then(function(artists) {
-    res.json(artists);
+  Artist.find({}, function(err, artists) {
+    if (err) res.send(err);
+    else res.json(artists);
   });
 }
 
 function show(req, res) {
-  Artist.findById(req.params.id)
-  .then(function(artist){
-    if(!artist) res.send(res, "not found");
-    //Artist.sing();
-    //artist.shout();
-    res.json(artist);
+  Artist.findById(req.params.id, function(err, artist){
+    if (err) res.send(err);
+    else if (!artist) res.send(res, "not found");
+    else res.json(artist);
   });  
 }
 
 function create(req, res) {
-  Artist.create(req.body).then(function(artist){
-    if(!artist) res.send(res, "not saved");
-    res.json(artist);
+  Artist.create(req.body, function(err, artist){
+    if (err) res.end(err);
+    else if (!artist) res.send(res, "not saved");
+    else res.json(artist);
   });
 }
 
 function update(req, res) {
-  Artist.findById(req.params.id)
-  .then(function(artist){
-    if(!artist) res.send(res, "not found");
-    return artist.updateAttributes(req.body);
-  })
-  .then(function(artist){
-    res.json(artist);
+  Artist.findByIdAndUpdate(req.params.id, 
+    {$set: req.body}, function(err, artist){
+    if (err) res.send(err);
+    else res.json(artist);
   });
 }
 
 function destroy(req, res) {
-  Artist.findById(req.params.id)
-  .then(function(artist){
-    if(!artist) res.send(res, "not found");
-    return artist.destroy();
-  })
-  .then(function(){
-    res.send("artist deleted");
-  });  
+  Artist.findByIdAndRemove(req.params.id, function(err, artist){
+    if (err) res.send(err);
+    else if (!artist) res.send(res, "not found");
+    else res.send("artist deleted");
+  }); 
 }
 
 module.exports.index = index;

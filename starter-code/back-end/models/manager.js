@@ -1,6 +1,10 @@
-module.exports = function(sequelize, Sequelize){
-  var model = sequelize.define("manager", {
-    name: Sequelize.STRING
-  });
-  return model;
-};
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
+
+var ManagerSchema = new Schema({
+  name: String
+});
+
+var Manager = mongoose.model('Manager', ManagerSchema);
+
+module.exports = Manager;

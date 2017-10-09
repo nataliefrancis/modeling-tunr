@@ -17,18 +17,16 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 ## Starting Off
 
 * Use the code in `starter-code` to get started!
-* Navigate to the `starter-code/back-end` folder and `npm install` and `--save` the following packages
-	* `express` `sequelize` `pg` `pg-hstore` `body-parser` `dotenv`
-* Look inside `back-end/models/index.js` and create the database at the end of the connect URL (in the `psql` console)
-* Replace the `<username>` field with your local Mac username
-* Look at `back-end/db/dbSetup.js`. Get a basic idea for what it is doing, then run it with `node`.
+* Navigate to the `starter-code/back-end` folder and `npm install` the following packages
+	* `express` `mongoose` `body-parser` `dotenv`
+* Now run `server.js` with `node`.
 * Navigate to `front-end` in terminal and run `npm start` to kick off the app.
 * Open your app in Chrome and check out the functionality for viewing, adding, and updating artists.
 	* Create two artists
 	* Verify that you can see these artists
 	* Update a field for one of the artists
 	* Delete one of the artists
-* For reference, check the [Sequelize Docs](http://docs.sequelizejs.com/en/latest/) throughout this lab
+* For reference, check the [Mongoose Docs](http://mongoosejs.com/docs/api.html) throughout this lab
 * Lean heavily on your `Artists` `starter-code`, but go slowly--one function, one route at a time
 * Make sure you test early and often, preferably multiple times per step (bullet point)
 * Tab and Sublime Text shortcuts are your friend, Copy-and-Paste is not.
@@ -39,16 +37,9 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 	* Close your knowledge gap by ASKING that question to someone!
 
 ## Requirements
-
-<!--10:38 WDI3 -->
 <!--10:35 25 minutes-->
 
 <!--Instructor should model the entire `show` route all the way through to the back end. Devs will be at half-mast for this.  Then turn over to devs to code themselves.-->
-
-<!--Started modeling at 10:54 WDI2-->
-
-<!--Finished modeling at 11:40 WDI2-->
-<!--Finished modeling 11:17 WDI3 -->
 
 - Sprint 1: User can CRUD managers
   - As of now, the only route that works for managers is `index`.  Go to `/managers` in your browser to check it out!  Not very impressive I suppose, but it will be once we build out the rest of the CRUD functionality, using the CRUDable `artists` as an inspiration.
