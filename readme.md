@@ -86,10 +86,10 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 
 Let's seed our application with some data. 
 
-- There's something wrong with our requiring of `models`.  Can you see what it is?
-- Check out the almost-complete Artist creation, and fill in the correct info from below.
-- Follow this pattern for Manager and Song creation. 
-- Don't forget to `.exit()` when you're done with your last `create`.  But make sure you don't do it before then!
+	- There's something wrong with our requiring of `models`.  Can you see what it is?
+	- Check out the almost-complete Artist creation, and fill in the correct info from below.
+	- Follow this pattern for Manager and Song creation. 
+	- Don't forget to `.exit()` when you're done with your last `create`.  But make sure you don't do it before then!
 
   **Artist**:  
 
