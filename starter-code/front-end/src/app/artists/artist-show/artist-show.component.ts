@@ -9,8 +9,8 @@ import { ArtistsService } from '../artists.service';
 })
 export class ArtistShowComponent implements OnInit {
 
-	oneArtist;
-
+  oneArtist = <any>{};
+  
   constructor(
   	private route : ActivatedRoute,
   	private artistsService : ArtistsService

@@ -7,7 +7,7 @@
     <ul>
       <li>
         <h2>
-          <a routerLink="/managers/{{manager.id}}">
+          <a routerLink="/managers/{{manager._id}}">
             {{manager.name}}
           </a>
         </h2>
@@ -22,7 +22,7 @@
         <h3>{{manager.cell_phone_number}}</h3>
       </li>
       <li>
-        <a routerLink="/managers/{{manager.id}}/edit">
+        <a routerLink="/managers/edit/{{manager._id}}">
           Edit
         </a>
       </li>

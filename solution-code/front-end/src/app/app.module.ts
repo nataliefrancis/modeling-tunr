@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ArtistsRoutingModule} from './artists/artist-routing.module';
 import { ManagersRoutingModule } from './managers/manager-routing.module';
+import { SongsRoutingModule } from './songs/song-routing.module';
 import { ArtistsModule } from './artists/artists.module';
 import { ManagersModule } from './managers/managers.module';
+import { SongsModule } from './songs/songs.module';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -24,6 +26,8 @@ import { AboutComponent } from './about/about.component';
     ArtistsModule,
     ManagersRoutingModule,
     ManagersModule,
+    SongsRoutingModule,
+    SongsModule,
     HttpModule
   ],
   providers: [],

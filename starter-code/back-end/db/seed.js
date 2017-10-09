@@ -10,8 +10,8 @@ let artists_list = [
   }
 ];
 
-db.Artist.remove({}, function(err, authors) {
-  console.log('removed all authors');
+db.Artist.remove({}, function(err, artists) {
+  console.log('removed all artists');
   db.Artist.create(artists_list, function(err, artists){
   	if (err) {
   	  console.log(err);
