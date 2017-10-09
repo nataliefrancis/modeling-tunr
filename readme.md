@@ -17,7 +17,7 @@ You are a new developer at a top-of-the-line record label called Tunr.  The prod
 ## Starting Off
 
 * Use the code in `starter-code` to get started!
-* Navigate to the `starter-code/back-end` folder and `npm install` and `--save` the following packages
+* Navigate to the `starter-code/back-end` folder and `npm install` the following packages
 	* `express` `sequelize` `pg` `pg-hstore` `body-parser` `dotenv`
 * Look inside `back-end/models/index.js` and create the database at the end of the connect URL (in the `psql` console)
 * Replace the `<username>` field with your local Mac username
