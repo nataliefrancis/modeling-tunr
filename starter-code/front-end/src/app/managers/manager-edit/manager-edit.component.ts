@@ -27,7 +27,7 @@ export class ManagerEditComponent implements OnInit {
   }
 
   updateManager(updatedManager) {
-    console.log("updating artist yo!");
+    console.log("updating manager yo!");
     this.managersService.updateManager(updatedManager)
     .subscribe(response => {
       console.log(response.json());

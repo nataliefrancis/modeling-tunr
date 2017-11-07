@@ -10,14 +10,14 @@ export class ManagerNewComponent implements OnInit {
 
 	newManager: object = {};
 
-  constructor(private managerService : ManagersService) { }
+  constructor(private managersService : ManagersService) { }
 
   ngOnInit() {
   }
 
   saveManager(newManager) {
   	console.log(newManager);
-  	this.managerService.saveManager(newManager)
+  	this.managersService.saveManager(newManager)
   			.subscribe(response => {
 			console.log(response.json());
 			let manager = response.json();

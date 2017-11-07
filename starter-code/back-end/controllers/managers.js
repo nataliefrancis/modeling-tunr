@@ -33,7 +33,7 @@ function update(req, res) {
 }
 
 function destroy(req, res) {
-	Manager.findById(re.params.id)
+	Manager.findById(req.params.id)
 	.then(function(manager) {
 		if(!manager) return error("manager not found");
 		return manager.destroy();

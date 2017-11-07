@@ -32,10 +32,10 @@ router.post('/api/managers', managersController.create);
 router.get('/api/managers/:id', managersController.show);
 
 // update
-router.put('/api/artists/:id', artistsController.update);
+router.put('/api/managers/:id', managersController.update);
 
 //destroy
-router.delete('/api/managers/:id', artistsController.destroy);
+router.delete('/api/managers/:id', managersController.destroy);
 
 //Song Routes
 
