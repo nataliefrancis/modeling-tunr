@@ -15,7 +15,13 @@ import { ArtistsService } from './artists.service';
     RouterModule,
     FormsModule
   ],
-  declarations: [ArtistIndexComponent, ArtistsComponent, ArtistNewComponent, ArtistEditComponent, ArtistShowComponent],
+  declarations: [
+  	ArtistIndexComponent, 
+  	ArtistsComponent, 
+  	ArtistNewComponent, 
+  	ArtistEditComponent, 
+  	ArtistShowComponent
+  ],
   providers: [ArtistsService]
 })
 export class ArtistsModule { }
